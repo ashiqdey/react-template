@@ -11,7 +11,7 @@ const RootStyle = styled("div")(({theme}) => ({
   },
 }));
 
-export default function Page404() {
+export default function PageHome() {
   return (
     <Page title="Home page">
       <RootStyle>home</RootStyle>
