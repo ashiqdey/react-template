@@ -8,7 +8,7 @@ import { HEADER } from '../../../constants/configs';
 // components
 import { NavSectionHorizontal } from '../../../components/nav-section';
 //
-import navConfig from './NavConfig';
+import navConfig from './NavbarConfig';
 
 // ----------------------------------------
 

@@ -11,11 +11,12 @@ import useSettings from '../../../hooks/useSettings';
 import cssStyles from '../../../utils/cssStyles';
 // config
 import { NAVBAR } from '../../../constants/configs';
+import navConfig from './NavbarConfig';
+
 // components
 import { Logo, Scrollbar } from '../../../components';
 import { NavSectionVertical } from '../../../components/nav-section';
 //
-import navConfig from './NavConfig';
 import NavbarDocs from './NavbarDocs';
 import NavbarAccount from './NavbarAccount';
 import CollapseButton from './CollapseButton';
