@@ -36,12 +36,7 @@ export default function NavbarDocs() {
         </Typography>
       </div>
 
-      <Button
-        href={PATHS.root}
-        target='_blank'
-        rel='noopener'
-        variant='contained'
-      >
+      <Button href={PATHS.root} target='_blank' rel='noopener' variant='contained'>
         Documentation
       </Button>
     </Stack>

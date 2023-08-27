@@ -97,32 +97,19 @@ export default function CircularProgress({
           />
         ))}
       </svg>
-      {label && (
-        <span className='p-a text-gray-500 t-50 l-50 tt--50'>
-          {label === true ? `${value[0]}%` : label}
-        </span>
-      )}
+      {label && <span className='p-a text-gray-500 t-50 l-50 tt--50'>{label === true ? `${value[0]}%` : label}</span>}
     </Box>
   );
 }
 
 CircularProgress.propTypes = {
-  percents: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
-    PropTypes.number,
-  ]),
+  percents: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
 
   baseBorderWidth: PropTypes.number,
   baseBorderColor: PropTypes.string,
 
-  borderWidth: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
-    PropTypes.number,
-  ]),
-  borderColor: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.string,
-  ]),
+  borderWidth: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
+  borderColor: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
 
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   label: PropTypes.oneOfType([PropTypes.element, PropTypes.bool]),

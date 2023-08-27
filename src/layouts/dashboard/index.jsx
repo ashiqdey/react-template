@@ -50,18 +50,12 @@ export default function DashboardLayout() {
   if (verticalLayout) {
     return (
       <>
-        <DashboardHeader
-          onOpenSidebar={() => setOpen(true)}
-          verticalLayout={verticalLayout}
-        />
+        <DashboardHeader onOpenSidebar={() => setOpen(true)} verticalLayout={verticalLayout} />
 
         {isDesktop ? (
           <NavbarHorizontal />
         ) : (
-          <NavbarVertical
-            isOpenSidebar={open}
-            onCloseSidebar={() => setOpen(false)}
-          />
+          <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
         )}
 
         <Box
@@ -91,15 +85,9 @@ export default function DashboardLayout() {
         minHeight: { lg: 1 },
       }}
     >
-      <DashboardHeader
-        isCollapse={isCollapse}
-        onOpenSidebar={() => setOpen(true)}
-      />
+      <DashboardHeader isCollapse={isCollapse} onOpenSidebar={() => setOpen(true)} />
 
-      <NavbarVertical
-        isOpenSidebar={open}
-        onCloseSidebar={() => setOpen(false)}
-      />
+      <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
 
       <MainStyle collapseClick={collapseClick}>
         <Outlet />

@@ -1,14 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 // routes
-import {  PATHS } from '../../../routes/paths';
+import { PATHS } from '../../../routes/paths';
 // components
 import { Label, SvgIconStyle } from '../../../components';
 
 // ----------------------------------------
 
-const getIcon = (name) => (
-  <SvgIconStyle src={`/icons/${name}.svg`} sx={{ width: 1, height: 1 }} />
-);
+const getIcon = (name) => <SvgIconStyle src={`/icons/${name}.svg`} sx={{ width: 1, height: 1 }} />;
 
 const ICONS = {
   blog: getIcon('ic_blog'),
@@ -124,8 +122,6 @@ const navConfig = [
       //     { title: 'account', path: PATHS.user.account },
       //   ],
       // },
-
-      
     ],
   },
 

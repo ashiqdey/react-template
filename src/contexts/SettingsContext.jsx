@@ -5,10 +5,7 @@ import { createContext, useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import useResponsive from '../hooks/useResponsive';
 // utils
-import getColorPresets, {
-  colorPresets,
-  defaultPreset,
-} from '../utils/getColorPresets';
+import getColorPresets, { colorPresets, defaultPreset } from '../utils/getColorPresets';
 // config
 import { defaultSettings } from '../constants/configs';
 

@@ -1,22 +1,19 @@
 const ROOTS_AUTH = '/auth';
 const ROOTS_DASHBOARD = '/dashboard';
 
-
 // ----------------------------------------
 
 function path(root, sublink) {
   return `${root}${sublink}`;
 }
 
-
 // ----------------------------------------
 
 export const PATH_AUTH = {
   root: ROOTS_AUTH,
   login: path(ROOTS_AUTH, '/login'),
-  verify: path(ROOTS_AUTH, '/verify')
+  verify: path(ROOTS_AUTH, '/verify'),
 };
-
 
 export const PATHS = {
   contact: '/contact-us',
@@ -31,4 +28,4 @@ export const PATHS = {
 };
 
 // ROOT PATH AFTER LOGIN SUCCESSFUL
-export const PATH_AFTER_LOGIN = PATHS.general.root; 
+export const PATH_AFTER_LOGIN = PATHS.general.root;

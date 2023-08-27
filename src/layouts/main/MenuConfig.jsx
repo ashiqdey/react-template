@@ -1,5 +1,5 @@
 // routes
-import { PATH_AUTH, PATHS,PATH_AFTER_LOGIN } from '../../routes/paths';
+import { PATH_AUTH, PATHS, PATH_AFTER_LOGIN } from '../../routes/paths';
 // components
 import { Iconify } from '../../components';
 

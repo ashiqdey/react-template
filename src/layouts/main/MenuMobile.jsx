@@ -3,16 +3,7 @@ import { useState, useEffect } from 'react';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 // @mui
 import { alpha, styled } from '@mui/material/styles';
-import {
-  Box,
-  List,
-  Link,
-  Drawer,
-  Collapse,
-  ListItemText,
-  ListItemIcon,
-  ListItemButton,
-} from '@mui/material';
+import { Box, List, Link, Drawer, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
 // config
 import { NAVBAR } from '../../constants/configs';
 // components
@@ -87,12 +78,7 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem
-                key={link.title}
-                item={link}
-                isOpen={open}
-                onOpen={handleOpen}
-              />
+              <MenuMobileItem key={link.title} item={link} isOpen={open} onOpen={handleOpen} />
             ))}
           </List>
         </Scrollbar>
@@ -124,11 +110,7 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText disableTypography primary={title} />
           <Iconify
-            icon={
-              isOpen
-                ? 'eva:arrow-ios-downward-fill'
-                : 'eva:arrow-ios-forward-fill'
-            }
+            icon={isOpen ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
             sx={{ width: 16, height: 16, ml: 1 }}
           />
         </ListItemStyle>
@@ -158,12 +140,7 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
 
   if (title === 'Documentation') {
     return (
-      <ListItemStyle
-        href={path}
-        target='_blank'
-        rel='noopener'
-        component={Link}
-      >
+      <ListItemStyle href={path} target='_blank' rel='noopener' component={Link}>
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText disableTypography primary={title} />
       </ListItemStyle>
@@ -179,11 +156,7 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
         '&.active': {
           color: 'primary.main',
           fontWeight: 'fontWeightMedium',
-          bgcolor: (theme) =>
-            alpha(
-              theme.palette.primary.main,
-              theme.palette.action.selectedOpacity
-            ),
+          bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
         },
       }}
     >

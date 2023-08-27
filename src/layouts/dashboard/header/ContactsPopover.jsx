@@ -1,24 +1,13 @@
 import { useState } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
-import {
-  Avatar,
-  Typography,
-  ListItemText,
-  ListItemAvatar,
-  MenuItem,
-} from '@mui/material';
+import { Avatar, Typography, ListItemText, ListItemAvatar, MenuItem } from '@mui/material';
 // utils
 import { fToNow } from '../../../utils/formatTime';
 // _mock_
 import { _contacts } from '../../../_mock';
 // components
-import {
-  Iconify,
-  Scrollbar,
-  BadgeStatus,
-  MenuPopover,
-} from '../../../components';
+import { Iconify, Scrollbar, BadgeStatus, MenuPopover } from '../../../components';
 import { IconButtonAnimate } from '../../../components/animate';
 
 // ----------------------------------------
@@ -47,11 +36,7 @@ export default function ContactsPopover() {
           width: 40,
           height: 40,
           ...(open && {
-            bgcolor: (theme) =>
-              alpha(
-                theme.palette.primary.main,
-                theme.palette.action.focusOpacity
-              ),
+            bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.focusOpacity),
           }),
         }}
       >
@@ -74,8 +59,7 @@ export default function ContactsPopover() {
         }}
       >
         <Typography variant='h6' sx={{ p: 1.5 }}>
-          Contacts{' '}
-          <Typography component='span'>({_contacts.length})</Typography>
+          Contacts <Typography component='span'>({_contacts.length})</Typography>
         </Typography>
 
         <Scrollbar sx={{ height: ITEM_HEIGHT * 6 }}>
@@ -83,19 +67,14 @@ export default function ContactsPopover() {
             <MenuItem key={contact.id}>
               <ListItemAvatar sx={{ position: 'relative' }}>
                 <Avatar src={contact.avatar} />
-                <BadgeStatus
-                  status={contact.status}
-                  sx={{ position: 'absolute', right: 1, bottom: 1 }}
-                />
+                <BadgeStatus status={contact.status} sx={{ position: 'absolute', right: 1, bottom: 1 }} />
               </ListItemAvatar>
 
               <ListItemText
                 primaryTypographyProps={{ typography: 'subtitle2', mb: 0.25 }}
                 secondaryTypographyProps={{ typography: 'caption' }}
                 primary={contact.name}
-                secondary={
-                  contact.status === 'offline' && fToNow(contact.lastActivity)
-                }
+                secondary={contact.status === 'offline' && fToNow(contact.lastActivity)}
               />
             </MenuItem>
           ))}

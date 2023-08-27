@@ -1,13 +1,7 @@
 // test utils/formateNumber
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect } from 'vitest';
 
-import {
-  fCurrency,
-  fPercent,
-  fNumber,
-  fShortenNumber,
-  fData,
-} from '../../utils/formatNumber'; // Replace with the actual file path
+import { fCurrency, fPercent, fNumber, fShortenNumber, fData } from '../../utils/formatNumber'; // Replace with the actual file path
 
 describe('Number Formatting Functions', () => {
   test('fCurrency formats integer number', () => {

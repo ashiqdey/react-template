@@ -14,40 +14,27 @@ import { isExternalLink } from '..';
 
 // ----------------------------------------
 
-export const NavItemRoot = forwardRef(
-  ({ item, active, open, onMouseEnter, onMouseLeave }, ref) => {
-    const { title, path, icon, children } = item;
+export const NavItemRoot = forwardRef(({ item, active, open, onMouseEnter, onMouseLeave }, ref) => {
+  const { title, path, icon, children } = item;
 
-    if (children) {
-      return (
-        <ListItemStyle
-          ref={ref}
-          open={open}
-          activeRoot={active}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <NavItemContent icon={icon} title={title} children={children} />
-        </ListItemStyle>
-      );
-    }
-
-    return isExternalLink(path) ? (
-      <ListItemStyle
-        component={Link}
-        href={path}
-        target='_blank'
-        rel='noopener'
-      >
-        <NavItemContent icon={icon} title={title} children={children} />
-      </ListItemStyle>
-    ) : (
-      <ListItemStyle component={RouterLink} to={path} activeRoot={active}>
+  if (children) {
+    return (
+      <ListItemStyle ref={ref} open={open} activeRoot={active} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <NavItemContent icon={icon} title={title} children={children} />
       </ListItemStyle>
     );
   }
-);
+
+  return isExternalLink(path) ? (
+    <ListItemStyle component={Link} href={path} target='_blank' rel='noopener'>
+      <NavItemContent icon={icon} title={title} children={children} />
+    </ListItemStyle>
+  ) : (
+    <ListItemStyle component={RouterLink} to={path} activeRoot={active}>
+      <NavItemContent icon={icon} title={title} children={children} />
+    </ListItemStyle>
+  );
+});
 
 NavItemRoot.propTypes = {
   active: PropTypes.bool,
@@ -64,55 +51,35 @@ NavItemRoot.propTypes = {
 
 // ----------------------------------------
 
-export const NavItemSub = forwardRef(
-  ({ item, active, open, onMouseEnter, onMouseLeave }, ref) => {
-    const { title, path, icon, children } = item;
+export const NavItemSub = forwardRef(({ item, active, open, onMouseEnter, onMouseLeave }, ref) => {
+  const { title, path, icon, children } = item;
 
-    if (children) {
-      return (
-        <ListItemStyle
-          ref={ref}
-          subItem
-          disableRipple
-          open={open}
-          activeSub={active}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <NavItemContent
-            icon={icon}
-            title={title}
-            children={children}
-            subItem
-          />
-        </ListItemStyle>
-      );
-    }
-
-    return isExternalLink(path) ? (
+  if (children) {
+    return (
       <ListItemStyle
+        ref={ref}
         subItem
-        href={path}
         disableRipple
-        rel='noopener'
-        target='_blank'
-        component={Link}
-      >
-        <NavItemContent icon={icon} title={title} children={children} subItem />
-      </ListItemStyle>
-    ) : (
-      <ListItemStyle
-        disableRipple
-        component={RouterLink}
-        to={path}
+        open={open}
         activeSub={active}
-        subItem
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
       >
         <NavItemContent icon={icon} title={title} children={children} subItem />
       </ListItemStyle>
     );
   }
-);
+
+  return isExternalLink(path) ? (
+    <ListItemStyle subItem href={path} disableRipple rel='noopener' target='_blank' component={Link}>
+      <NavItemContent icon={icon} title={title} children={children} subItem />
+    </ListItemStyle>
+  ) : (
+    <ListItemStyle disableRipple component={RouterLink} to={path} activeSub={active} subItem>
+      <NavItemContent icon={icon} title={title} children={children} subItem />
+    </ListItemStyle>
+  );
+});
 
 NavItemSub.propTypes = {
   active: PropTypes.bool,

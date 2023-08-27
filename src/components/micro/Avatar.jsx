@@ -9,9 +9,7 @@ import Badge from '@mui/material/Badge';
 // -----------------------------------------------
 
 const getStatusColor = (theme, status) => {
-  return ['online', 'active'].includes(status)
-    ? theme.palette.success.main
-    : theme.palette.grey[400];
+  return ['online', 'active'].includes(status) ? theme.palette.success.main : theme.palette.grey[400];
 };
 
 const StyledBadge = styled(Badge)(({ theme, status }) => ({
@@ -34,62 +32,52 @@ const StyledBadge = styled(Badge)(({ theme, status }) => ({
 
 // -----------------------------------------------
 
-const Avatar = forwardRef(
-  ({ color = 'default', status, children, sx, ...other }, ref) => {
-    const theme = useTheme();
+const Avatar = forwardRef(({ color = 'default', status, children, sx, ...other }, ref) => {
+  const theme = useTheme();
 
-    if (status) {
-      return (
-        <StyledBadge
-          overlap='circular'
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          variant='dot'
-          status={status}
-        >
-          <Avatar {...other} />
-        </StyledBadge>
-      );
-    }
-
-    if (color === 'default') {
-      return (
-        <MUIAvatar ref={ref} sx={sx} {...other}>
-          {children}
-        </MUIAvatar>
-      );
-    }
-
+  if (status) {
     return (
-      <MUIAvatar
-        ref={ref}
-        sx={{
-          fontWeight: theme.typography.fontWeightMedium,
-          color: theme.palette[color].contrastText,
-          backgroundColor: theme.palette[color].main,
-          // backgroundColor: theme.palette.grey[100],
-          ...sx,
-        }}
-        {...other}
+      <StyledBadge
+        overlap='circular'
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        variant='dot'
+        status={status}
       >
+        <Avatar {...other} />
+      </StyledBadge>
+    );
+  }
+
+  if (color === 'default') {
+    return (
+      <MUIAvatar ref={ref} sx={sx} {...other}>
         {children}
       </MUIAvatar>
     );
   }
-);
+
+  return (
+    <MUIAvatar
+      ref={ref}
+      sx={{
+        fontWeight: theme.typography.fontWeightMedium,
+        color: theme.palette[color].contrastText,
+        backgroundColor: theme.palette[color].main,
+        // backgroundColor: theme.palette.grey[100],
+        ...sx,
+      }}
+      {...other}
+    >
+      {children}
+    </MUIAvatar>
+  );
+});
 
 Avatar.propTypes = {
   children: PropTypes.node,
   sx: PropTypes.object,
   status: PropTypes.string,
-  color: PropTypes.oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'info',
-    'success',
-    'warning',
-    'error',
-  ]),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'success', 'warning', 'error']),
 };
 
 export default Avatar;

@@ -1,5 +1,3 @@
 import getCSSVariable from './getCSSVariable';
 
-export {
-  getCSSVariable,
-};
+export { getCSSVariable };

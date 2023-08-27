@@ -4,17 +4,7 @@ import { useState, useEffect } from 'react';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
-import {
-  Box,
-  Link,
-  Grid,
-  List,
-  Stack,
-  Popover,
-  ListItem,
-  ListSubheader,
-  CardActionArea,
-} from '@mui/material';
+import { Box, Link, Grid, List, Stack, Popover, ListItem, ListSubheader, CardActionArea } from '@mui/material';
 // components
 import { Iconify } from '../../components';
 
@@ -151,11 +141,7 @@ function MenuDesktopItem({ item, isHome, isOpen, isOffset, onOpen, onClose }) {
         >
           {title}
           <Iconify
-            icon={
-              isOpen
-                ? 'eva:arrow-ios-upward-fill'
-                : 'eva:arrow-ios-downward-fill'
-            }
+            icon={isOpen ? 'eva:arrow-ios-upward-fill' : 'eva:arrow-ios-downward-fill'}
             sx={{ ml: 0.5, width: 16, height: 16 }}
           />
         </LinkStyle>
@@ -185,12 +171,7 @@ function MenuDesktopItem({ item, isHome, isOpen, isOffset, onOpen, onClose }) {
               const { subheader, items } = list;
 
               return (
-                <Grid
-                  key={subheader}
-                  item
-                  xs={12}
-                  md={subheader === 'Dashboard' ? 6 : 2}
-                >
+                <Grid key={subheader} item xs={12} md={subheader === 'Dashboard' ? 6 : 2}>
                   <List disablePadding>
                     <ListSubheader
                       disableSticky

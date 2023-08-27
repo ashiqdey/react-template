@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
-import {
-  Box,
-  Link,
-  Typography,
-  Breadcrumbs as MUIBreadcrumbs,
-} from '@mui/material';
+import { Box, Link, Typography, Breadcrumbs as MUIBreadcrumbs } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -18,9 +13,7 @@ Breadcrumbs.propTypes = {
 export default function Breadcrumbs({ links, activeLast = false, ...other }) {
   const currentLink = links[links.length - 1].name;
 
-  const listDefault = links.map((link) => (
-    <LinkItem key={link.name} link={link} />
-  ));
+  const listDefault = links.map((link) => <LinkItem key={link.name} link={link} />);
 
   const listActiveLast = links.map((link) => (
     <div key={link.name}>
@@ -89,9 +82,7 @@ function LinkItem({ link }) {
         '& > div': { display: 'inherit' },
       }}
     >
-      {icon && (
-        <Box sx={{ mr: 1, '& svg': { width: 20, height: 20 } }}>{icon}</Box>
-      )}
+      {icon && <Box sx={{ mr: 1, '& svg': { width: 20, height: 20 } }}>{icon}</Box>}
       {name}
     </Link>
   );

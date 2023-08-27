@@ -1,20 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
-// 
+//
 import * as serviceWorker from './serviceWorker';
 // import reportWebVitals from './reportWebVitals';
-// 
+//
 import App from './App';
 import { SettingsProvider } from './contexts/SettingsContext';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <HelmetProvider>
+    <HelmetProvider>
       <SettingsProvider>
         {/* <BrowserRouter basename={import.meta.env.VITE_FOLDER || '/'}> */}
         <BrowserRouter>
@@ -22,8 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </SettingsProvider>
     </HelmetProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
 
 // If you want to enable client cache, register instead.
 serviceWorker.unregister();

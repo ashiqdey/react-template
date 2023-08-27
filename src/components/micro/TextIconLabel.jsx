@@ -11,13 +11,7 @@ TextIconLabel.propTypes = {
   value: PropTypes.any,
 };
 
-export default function TextIconLabel({
-  icon,
-  value,
-  endIcon = false,
-  sx,
-  ...other
-}) {
+export default function TextIconLabel({ icon, value, endIcon = false, sx, ...other }) {
   return (
     <Stack
       direction='row'

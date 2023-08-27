@@ -33,12 +33,7 @@ export default function NavbarAccount({ isCollapse }) {
   const { user } = useAuth();
 
   return (
-    <Link
-      underline='none'
-      color='inherit'
-      component={RouterLink}
-      to={PATHS.root}
-    >
+    <Link underline='none' color='inherit' component={RouterLink} to={PATHS.root}>
       <RootStyle
         sx={{
           ...(isCollapse && {

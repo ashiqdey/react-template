@@ -1,13 +1,7 @@
 import { useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import {
-  Input,
-  Slide,
-  Button,
-  InputAdornment,
-  ClickAwayListener,
-} from '@mui/material';
+import { Input, Slide, Button, InputAdornment, ClickAwayListener } from '@mui/material';
 // utils
 import cssStyles from '../../../utils/cssStyles';
 // components
@@ -64,10 +58,7 @@ export default function Searchbar() {
               placeholder='Search…'
               startAdornment={
                 <InputAdornment position='start'>
-                  <Iconify
-                    icon={'eva:search-fill'}
-                    sx={{ color: 'text.disabled', width: 20, height: 20 }}
-                  />
+                  <Iconify icon={'eva:search-fill'} sx={{ color: 'text.disabled', width: 20, height: 20 }} />
                 </InputAdornment>
               }
               sx={{ mr: 1, fontWeight: 'fontWeightBold' }}

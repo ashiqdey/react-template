@@ -7,8 +7,7 @@ import { ICON, NAVBAR } from '../../../constants/configs';
 // ----------------------------------------
 
 export const ListItemStyle = styled(ListItemButton, {
-  shouldForwardProp: (prop) =>
-    prop !== 'activeRoot' && prop !== 'activeSub' && prop !== 'subItem',
+  shouldForwardProp: (prop) => prop !== 'activeRoot' && prop !== 'activeSub' && prop !== 'subItem',
 })(({ activeRoot, activeSub, subItem, theme }) => ({
   ...theme.typography.body2,
   position: 'relative',
@@ -23,10 +22,7 @@ export const ListItemStyle = styled(ListItemButton, {
   ...(activeRoot && {
     ...theme.typography.subtitle2,
     color: theme.palette.primary.main,
-    backgroundColor: alpha(
-      theme.palette.primary.main,
-      theme.palette.action.selectedOpacity
-    ),
+    backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
   }),
   // activeSub
   ...(activeSub && {

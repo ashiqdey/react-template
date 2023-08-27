@@ -8,10 +8,7 @@ export default function ToggleButton(theme) {
     style: {
       '&:hover': {
         borderColor: alpha(theme.palette[color].main, 0.48),
-        backgroundColor: alpha(
-          theme.palette[color].main,
-          theme.palette.action.hoverOpacity
-        ),
+        backgroundColor: alpha(theme.palette[color].main, theme.palette.action.hoverOpacity),
       },
       '&.Mui-selected': {
         borderColor: alpha(theme.palette[color].main, 0.48),

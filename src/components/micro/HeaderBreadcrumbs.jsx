@@ -15,14 +15,7 @@ HeaderBreadcrumbs.propTypes = {
   sx: PropTypes.object,
 };
 
-export default function HeaderBreadcrumbs({
-  links,
-  action,
-  heading,
-  moreLink = '' || [],
-  sx,
-  ...other
-}) {
+export default function HeaderBreadcrumbs({ links, action, heading, moreLink = '' || [], sx, ...other }) {
   return (
     <Box sx={{ mb: 5, ...sx }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>

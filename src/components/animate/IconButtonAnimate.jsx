@@ -7,28 +7,17 @@ import { Box, IconButton } from '@mui/material';
 
 // ----------------------------------------
 
-const IconButtonAnimate = forwardRef(
-  ({ children, size = 'medium', ...other }, ref) => (
-    <AnimateWrap size={size}>
-      <IconButton size={size} ref={ref} {...other}>
-        {children}
-      </IconButton>
-    </AnimateWrap>
-  )
-);
+const IconButtonAnimate = forwardRef(({ children, size = 'medium', ...other }, ref) => (
+  <AnimateWrap size={size}>
+    <IconButton size={size} ref={ref} {...other}>
+      {children}
+    </IconButton>
+  </AnimateWrap>
+));
 
 IconButtonAnimate.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf([
-    'inherit',
-    'default',
-    'primary',
-    'secondary',
-    'info',
-    'success',
-    'warning',
-    'error',
-  ]),
+  color: PropTypes.oneOf(['inherit', 'default', 'primary', 'secondary', 'info', 'success', 'warning', 'error']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 

@@ -47,8 +47,7 @@ const handlers = {
   },
 };
 
-const reducer = (state, action) =>
-  handlers[action.type] ? handlers[action.type](state, action) : state;
+const reducer = (state, action) => (handlers[action.type] ? handlers[action.type](state, action) : state);
 
 const AuthContext = createContext({
   ...initialState,
@@ -71,20 +70,17 @@ function AuthProvider({ children }) {
     const initialize = async () => {
       try {
         // const accessToken = window.localStorage.getItem('accessToken');
-
         // if (accessToken && isValidToken(accessToken)) {
         //   setSession(accessToken);
-
-          // const response = await axios.get('/api/account/my-account');
-          // const { user } = response.data;
-
-          // dispatch({
-          //   type: 'INITIALIZE',
-          //   payload: {
-          //     isAuthenticated: true,
-          //     user,
-          //   },
-          // });
+        // const response = await axios.get('/api/account/my-account');
+        // const { user } = response.data;
+        // dispatch({
+        //   type: 'INITIALIZE',
+        //   payload: {
+        //     isAuthenticated: true,
+        //     user,
+        //   },
+        // });
         // } else {
         //   dispatch({
         //     type: 'INITIALIZE',
@@ -115,7 +111,6 @@ function AuthProvider({ children }) {
     //   password,
     // });
     // const { accessToken, user } = response.data;
-
     // setSession(accessToken);
     // dispatch({
     //   type: 'LOGIN',
@@ -133,7 +128,6 @@ function AuthProvider({ children }) {
     //   lastName,
     // });
     // const { accessToken, user } = response.data;
-
     // window.localStorage.setItem('accessToken', accessToken);
     // dispatch({
     //   type: 'REGISTER',

@@ -8,63 +8,44 @@ import { Box, Fab } from '@mui/material';
 
 // ----------------------------------------
 
-const FabButtonAnimate = forwardRef(
-  (
-    { color = 'primary', size = 'large', children, sx, sxWrap, ...other },
-    ref
-  ) => {
-    const theme = useTheme();
+const FabButtonAnimate = forwardRef(({ color = 'primary', size = 'large', children, sx, sxWrap, ...other }, ref) => {
+  const theme = useTheme();
 
-    if (
-      color === 'default' ||
-      color === 'inherit' ||
-      color === 'primary' ||
-      color === 'secondary'
-    ) {
-      return (
-        <AnimateWrap size={size} sxWrap={sxWrap}>
-          <Fab ref={ref} size={size} color={color} sx={sx} {...other}>
-            {children}
-          </Fab>
-        </AnimateWrap>
-      );
-    }
-
+  if (color === 'default' || color === 'inherit' || color === 'primary' || color === 'secondary') {
     return (
       <AnimateWrap size={size} sxWrap={sxWrap}>
-        <Fab
-          ref={ref}
-          size={size}
-          sx={{
-            boxShadow: theme.customShadows[color],
-            color: theme.palette[color].contrastText,
-            bgcolor: theme.palette[color].main,
-            '&:hover': {
-              bgcolor: theme.palette[color].dark,
-            },
-            ...sx,
-          }}
-          {...other}
-        >
+        <Fab ref={ref} size={size} color={color} sx={sx} {...other}>
           {children}
         </Fab>
       </AnimateWrap>
     );
   }
-);
+
+  return (
+    <AnimateWrap size={size} sxWrap={sxWrap}>
+      <Fab
+        ref={ref}
+        size={size}
+        sx={{
+          boxShadow: theme.customShadows[color],
+          color: theme.palette[color].contrastText,
+          bgcolor: theme.palette[color].main,
+          '&:hover': {
+            bgcolor: theme.palette[color].dark,
+          },
+          ...sx,
+        }}
+        {...other}
+      >
+        {children}
+      </Fab>
+    </AnimateWrap>
+  );
+});
 
 FabButtonAnimate.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf([
-    'inherit',
-    'default',
-    'primary',
-    'secondary',
-    'info',
-    'success',
-    'warning',
-    'error',
-  ]),
+  color: PropTypes.oneOf(['inherit', 'default', 'primary', 'secondary', 'info', 'success', 'warning', 'error']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   sx: PropTypes.object,
   sxWrap: PropTypes.object,

@@ -6,7 +6,6 @@ function createGradient(color1, color2) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
 }
 
-
 // SETUP COLORS
 const PRIMARY = {
   lighter: alpha('#6a64f8', 0.08),

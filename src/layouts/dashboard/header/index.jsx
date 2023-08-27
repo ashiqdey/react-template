@@ -21,8 +21,7 @@ import Searchbar from './Searchbar';
 // ----------------------------------------
 
 const RootStyle = styled(AppBar, {
-  shouldForwardProp: (prop) =>
-    prop !== 'isCollapse' && prop !== 'isOffset' && prop !== 'verticalLayout',
+  shouldForwardProp: (prop) => prop !== 'isCollapse' && prop !== 'isOffset' && prop !== 'verticalLayout',
 })(({ isCollapse, verticalLayout, theme }) => ({
   ...cssStyles(theme).bgBlur(),
   boxShadow: 'none',
@@ -52,11 +51,7 @@ DashboardHeader.propTypes = {
   verticalLayout: PropTypes.bool,
 };
 
-export default function DashboardHeader({
-  onOpenSidebar,
-  isCollapse = false,
-  verticalLayout = false,
-}) {
+export default function DashboardHeader({ onOpenSidebar, isCollapse = false, verticalLayout = false }) {
   const isDesktop = useResponsive('up', 'lg');
 
   return (
@@ -70,10 +65,7 @@ export default function DashboardHeader({
         {isDesktop && verticalLayout && <Logo sx={{ mr: 2.5 }} />}
 
         {!isDesktop && (
-          <IconButtonAnimate
-            onClick={onOpenSidebar}
-            sx={{ mr: 1, color: 'text.primary' }}
-          >
+          <IconButtonAnimate onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary' }}>
             <Iconify icon='eva:menu-2-fill' />
           </IconButtonAnimate>
         )}
@@ -81,11 +73,7 @@ export default function DashboardHeader({
         <Searchbar />
         <Box sx={{ flexGrow: 1 }} />
 
-        <Stack
-          direction='row'
-          alignItems='center'
-          spacing={{ xs: 0.5, sm: 1.5 }}
-        >
+        <Stack direction='row' alignItems='center' spacing={{ xs: 0.5, sm: 1.5 }}>
           {/* <LanguagePopover /> */}
           {/* <NotificationsPopover /> */}
           {/* <ContactsPopover /> */}

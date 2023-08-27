@@ -29,9 +29,7 @@ import { IconButtonAnimate } from '../../../components/animate';
 export default function NotificationsPopover() {
   const [notifications, setNotifications] = useState(_notifications);
 
-  const totalUnRead = notifications.filter(
-    (item) => item.isUnRead === true
-  ).length;
+  const totalUnRead = notifications.filter((item) => item.isUnRead === true).length;
 
   const [open, setOpen] = useState(null);
 
@@ -54,11 +52,7 @@ export default function NotificationsPopover() {
 
   return (
     <>
-      <IconButtonAnimate
-        color={open ? 'primary' : 'default'}
-        onClick={handleOpen}
-        sx={{ width: 40, height: 40 }}
-      >
+      <IconButtonAnimate color={open ? 'primary' : 'default'} onClick={handleOpen} sx={{ width: 40, height: 40 }}>
         <Badge badgeContent={totalUnRead} color='error'>
           <Iconify icon='eva:bell-fill' width={20} height={20} />
         </Badge>
@@ -93,38 +87,26 @@ export default function NotificationsPopover() {
           <List
             disablePadding
             subheader={
-              <ListSubheader
-                disableSticky
-                sx={{ py: 1, px: 2.5, typography: 'overline' }}
-              >
+              <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: 'overline' }}>
                 New
               </ListSubheader>
             }
           >
             {notifications.slice(0, 2).map((notification) => (
-              <NotificationItem
-                key={notification.id}
-                notification={notification}
-              />
+              <NotificationItem key={notification.id} notification={notification} />
             ))}
           </List>
 
           <List
             disablePadding
             subheader={
-              <ListSubheader
-                disableSticky
-                sx={{ py: 1, px: 2.5, typography: 'overline' }}
-              >
+              <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: 'overline' }}>
                 Before that
               </ListSubheader>
             }
           >
             {notifications.slice(2, 5).map((notification) => (
-              <NotificationItem
-                key={notification.id}
-                notification={notification}
-              />
+              <NotificationItem key={notification.id} notification={notification} />
             ))}
           </List>
         </Scrollbar>
@@ -184,10 +166,7 @@ function NotificationItem({ notification }) {
               color: 'text.disabled',
             }}
           >
-            <Iconify
-              icon='eva:clock-outline'
-              sx={{ mr: 0.5, width: 16, height: 16 }}
-            />
+            <Iconify icon='eva:clock-outline' sx={{ mr: 0.5, width: 16, height: 16 }} />
             {fToNow(notification.createdAt)}
           </Typography>
         }
@@ -202,11 +181,7 @@ function renderContent(notification) {
   const title = (
     <Typography variant='subtitle2'>
       {notification.title}
-      <Typography
-        component='span'
-        variant='body2'
-        sx={{ color: 'text.secondary' }}
-      >
+      <Typography component='span' variant='body2' sx={{ color: 'text.secondary' }}>
         {/* &nbsp; {noCase(notification.description)} */}
         &nbsp; {notification.description}
       </Typography>
@@ -258,9 +233,7 @@ function renderContent(notification) {
     };
   }
   return {
-    avatar: notification.avatar ? (
-      <img alt={notification.title} src={notification.avatar} />
-    ) : null,
+    avatar: notification.avatar ? <img alt={notification.title} src={notification.avatar} /> : null,
     title,
   };
 }

@@ -2,12 +2,7 @@ import PropTypes from 'prop-types';
 // form
 import { useFormContext, Controller } from 'react-hook-form';
 // @mui
-import {
-  Radio,
-  RadioGroup,
-  FormHelperText,
-  FormControlLabel,
-} from '@mui/material';
+import { Radio, RadioGroup, FormHelperText, FormControlLabel } from '@mui/material';
 
 // ----------------------------------------
 
@@ -17,12 +12,7 @@ RHFRadioGroup.propTypes = {
   getOptionLabel: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default function RHFRadioGroup({
-  name,
-  options,
-  getOptionLabel,
-  ...other
-}) {
+export default function RHFRadioGroup({ name, options, getOptionLabel, ...other }) {
   const { control } = useFormContext();
 
   return (

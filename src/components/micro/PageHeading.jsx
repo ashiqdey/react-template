@@ -13,12 +13,7 @@ PageHeading.propTypes = {
   breadcrumbs: PropTypes.array,
   children: PropTypes.node,
 };
-export default function PageHeading({
-  title,
-  subtitle,
-  breadcrumbs,
-  children,
-}) {
+export default function PageHeading({ title, subtitle, breadcrumbs, children }) {
   return (
     <Box>
       <Typography variant='h3'>{title}</Typography>

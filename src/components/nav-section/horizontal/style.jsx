@@ -7,21 +7,14 @@ import { NAVBAR } from '../../../constants/configs';
 // ----------------------------------------
 
 export const ListItemStyle = styled(Button, {
-  shouldForwardProp: (prop) =>
-    prop !== 'activeRoot' &&
-    prop !== 'activeSub' &&
-    prop !== 'subItem' &&
-    prop !== 'open',
+  shouldForwardProp: (prop) => prop !== 'activeRoot' && prop !== 'activeSub' && prop !== 'subItem' && prop !== 'open',
 })(({ activeRoot, activeSub, subItem, open, theme }) => {
   const isLight = theme.palette.mode === 'light';
 
   const activeRootStyle = {
     color: theme.palette.grey[800],
     backgroundColor: theme.palette.common.white,
-    boxShadow: `-2px 4px 6px 0 ${alpha(
-      isLight ? theme.palette.grey[500] : theme.palette.common.black,
-      0.16
-    )}`,
+    boxShadow: `-2px 4px 6px 0 ${alpha(isLight ? theme.palette.grey[500] : theme.palette.common.black, 0.16)}`,
   };
 
   return {

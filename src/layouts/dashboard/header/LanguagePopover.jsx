@@ -60,12 +60,7 @@ export default function LanguagePopover() {
                 handleClose();
               }}
             >
-              <Image
-                disabledEffect
-                alt={option.label}
-                src={option.icon}
-                sx={{ width: 28, mr: 2 }}
-              />
+              <Image disabledEffect alt={option.label} src={option.icon} sx={{ width: 28, mr: 2 }} />
 
               {option.label}
             </MenuItem>

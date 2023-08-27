@@ -46,14 +46,7 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
 
   const isDesktop = useResponsive('up', 'lg');
 
-  const {
-    isCollapse,
-    collapseClick,
-    collapseHover,
-    onToggleCollapse,
-    onHoverEnter,
-    onHoverLeave,
-  } = useSettings();
+  const { isCollapse, collapseClick, collapseHover, onToggleCollapse, onHoverEnter, onHoverLeave } = useSettings();
 
   useEffect(() => {
     if (isOpenSidebar) {
@@ -83,18 +76,11 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           ...(isCollapse && { alignItems: 'center' }),
         }}
       >
-        <Stack
-          direction='row'
-          alignItems='center'
-          justifyContent='space-between'
-        >
+        <Stack direction='row' alignItems='center' justifyContent='space-between'>
           <Logo />
 
           {isDesktop && !isCollapse && (
-            <CollapseButton
-              onToggleCollapse={onToggleCollapse}
-              collapseClick={collapseClick}
-            />
+            <CollapseButton onToggleCollapse={onToggleCollapse} collapseClick={collapseClick} />
           )}
         </Stack>
 
@@ -113,9 +99,7 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
     <RootStyle
       sx={{
         width: {
-          lg: isCollapse
-            ? NAVBAR.DASHBOARD_COLLAPSE_WIDTH
-            : NAVBAR.DASHBOARD_WIDTH,
+          lg: isCollapse ? NAVBAR.DASHBOARD_COLLAPSE_WIDTH : NAVBAR.DASHBOARD_WIDTH,
         },
         ...(collapseClick && {
           position: 'absolute',
@@ -123,11 +107,7 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
       }}
     >
       {!isDesktop && (
-        <Drawer
-          open={isOpenSidebar}
-          onClose={onCloseSidebar}
-          PaperProps={{ sx: { width: NAVBAR.DASHBOARD_WIDTH } }}
-        >
+        <Drawer open={isOpenSidebar} onClose={onCloseSidebar} PaperProps={{ sx: { width: NAVBAR.DASHBOARD_WIDTH } }}>
           {renderContent}
         </Drawer>
       )}

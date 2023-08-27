@@ -7,18 +7,18 @@ import { NavListRoot } from './NavList';
 
 // ----------------------------------------
 
-export const ListSubheaderStyle = styled((props) => (
-  <ListSubheader disableSticky disableGutters {...props} />
-))(({ theme }) => ({
-  ...theme.typography.overline,
-  paddingTop: theme.spacing(3),
-  paddingLeft: theme.spacing(2),
-  paddingBottom: theme.spacing(1),
-  color: theme.palette.text.primary,
-  transition: theme.transitions.create('opacity', {
-    duration: theme.transitions.duration.shorter,
-  }),
-}));
+export const ListSubheaderStyle = styled((props) => <ListSubheader disableSticky disableGutters {...props} />)(
+  ({ theme }) => ({
+    ...theme.typography.overline,
+    paddingTop: theme.spacing(3),
+    paddingLeft: theme.spacing(2),
+    paddingBottom: theme.spacing(1),
+    color: theme.palette.text.primary,
+    transition: theme.transitions.create('opacity', {
+      duration: theme.transitions.duration.shorter,
+    }),
+  })
+);
 
 // ----------------------------------------
 
@@ -27,11 +27,7 @@ NavSectionVertical.propTypes = {
   navConfig: PropTypes.array,
 };
 
-export default function NavSectionVertical({
-  navConfig,
-  isCollapse = false,
-  ...other
-}) {
+export default function NavSectionVertical({ navConfig, isCollapse = false, ...other }) {
   return (
     <Box {...other}>
       {navConfig.map((group) => (

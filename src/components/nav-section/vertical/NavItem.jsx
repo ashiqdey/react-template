@@ -23,23 +23,13 @@ NavItemRoot.propTypes = {
   }),
 };
 
-export function NavItemRoot({
-  item,
-  isCollapse,
-  open = false,
-  active,
-  onOpen,
-}) {
+export function NavItemRoot({ item, isCollapse, open = false, active, onOpen }) {
   const { title, path, icon, info, children } = item;
 
   const renderContent = (
     <>
       {icon && <ListItemIconStyle>{icon}</ListItemIconStyle>}
-      <ListItemTextStyle
-        disableTypography
-        primary={title}
-        isCollapse={isCollapse}
-      />
+      <ListItemTextStyle disableTypography primary={title} isCollapse={isCollapse} />
       {!isCollapse && (
         <>
           {info && info}
@@ -103,13 +93,7 @@ export function NavItemSub({ item, open = false, active = false, onOpen }) {
   }
 
   return isExternalLink(path) ? (
-    <ListItemStyle
-      component={Link}
-      href={path}
-      target='_blank'
-      rel='noopener'
-      subItem
-    >
+    <ListItemStyle component={Link} href={path} target='_blank' rel='noopener' subItem>
       {renderContent}
     </ListItemStyle>
   ) : (

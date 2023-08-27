@@ -6,44 +6,43 @@ import { pxToRem, responsiveFontSizes } from '../utils/getFontValue';
 const FONT_PRIMARY = 'Poppins, Helvetica, sans-serif, arial'; // Google Font
 // const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
 
-
 const createFont = (size = 1, props = {}) => {
   const maps = {
-    '1': {
+    1: {
       lineHeight: 1.25,
       fontSize: pxToRem(38),
       letterSpacing: 1.5,
       ...responsiveFontSizes({ sm: 38, md: 38, lg: 40 }),
     },
-    '2': {
+    2: {
       lineHeight: 1.5,
       fontSize: pxToRem(30),
       ...responsiveFontSizes({ sm: 30, md: 30, lg: 32 }),
     },
-    '3': {
+    3: {
       lineHeight: 1.5,
       fontSize: pxToRem(22),
       ...responsiveFontSizes({ sm: 22, md: 22, lg: 24 }),
     },
-    '4': {
+    4: {
       lineHeight: 1.5,
       fontSize: pxToRem(18),
       ...responsiveFontSizes({ sm: 18, md: 18, lg: 20 }),
     },
-    '5': {
+    5: {
       lineHeight: 1.5,
       fontSize: pxToRem(16),
       ...responsiveFontSizes({ sm: 16, md: 16, lg: 17 }),
     },
-    '6': {
+    6: {
       lineHeight: 1.25,
       fontSize: pxToRem(14),
       ...responsiveFontSizes({ sm: 14, md: 14, lg: 14 }),
     },
-  }
+  };
 
-  return { ...maps[size], ...props }
-}
+  return { ...maps[size], ...props };
+};
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -57,7 +56,6 @@ const typography = {
   h4: createFont(4, { fontWeight: 600 }),
   h5: createFont(5, { fontWeight: 600 }),
   h6: createFont(6, { fontWeight: 600 }),
-
 
   subtitle1: {
     fontWeight: 600,
