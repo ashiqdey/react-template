@@ -41,11 +41,6 @@ export default function Router() {
       path: '*',
       element: <LogoOnlyLayout />,
       children: [
-        // { path: "coming-soon", element: <ComingSoon /> },
-        // { path: "maintenance", element: <Maintenance /> },
-        // { path: "pricing", element: <Pricing /> },
-        // { path: "payment", element: <Payment /> },
-        // { path: "500", element: <Page500 /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to='/404' replace /> },
       ],
@@ -54,8 +49,8 @@ export default function Router() {
       path: '/',
       element: <MainLayout />,
       children: [
-        { element: <Navigate to='/kits/cards-small' replace />, index: true },
-        // { element: <HomePage />, index: true },
+        // { element: <Navigate to='/' replace />, index: true },
+        {path: "",element: <HomePage />, index: true },
         // { path: "about-us", element: <About /> },
         // { path: "contact-us", element: <Contact /> },
         // { path: "faqs", element: <Faqs /> },
@@ -71,6 +66,6 @@ export default function Router() {
 // Authentication
 const Login = Loadable(lazy(() => import('../pages/auth/Login')));
 
-// const HomePage = Loadable(lazy(() => import('../pages/home')));
+const HomePage = Loadable(lazy(() => import('../pages/others/Home')));
 const NotFound = Loadable(lazy(() => import('../pages/others/404')));
 // const BlankPage = Loadable(lazy(() => import('../pages/test/Blank')));
